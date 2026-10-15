@@ -1,20 +1,20 @@
-INVITACIÓN WEB - VALENTINA LÓPEZ GIRALDO
+INVITACIÓN WEB DE VALENTINA — ARCHIVOS INICIALES
 
 Archivos:
-- index.html: página web completa.
-- valentina.png: fotografía que aparece en la sección de presentación.
-- referencia-diseno.png: imagen de referencia visual (no se usa como fondo de la web).
+- index.html: página web inicial con portada, mensaje, fechas, ubicaciones, vestuario y confirmación por WhatsApp.
+- portada.png: imagen de portada.
 
-PARA ACTUALIZAR GITHUB:
+PARA SUBIRLO A GITHUB:
 1. Abre el repositorio invitacion-valentina.
-2. Entra en Add file > Upload files.
-3. Sube index.html y valentina.png.
-4. Si GitHub pregunta por sobrescribir index.html, confirma que deseas reemplazarlo.
-5. Pulsa Commit changes.
-6. Espera unos minutos y abre https://alejogoso085.github.io/invitacion-valentina/
+2. Pulsa Add file > Upload files.
+3. Arrastra index.html y portada.png (no hace falta subir el ZIP).
+4. Pulsa Commit changes.
+5. Ve a Settings > Pages.
+6. En Build and deployment, elige Deploy from a branch.
+7. Selecciona la rama main y la carpeta /(root), y pulsa Save.
+8. Espera unos minutos y abre la dirección que GitHub Pages muestre.
 
-NOTAS:
-- Los botones de Google Maps usan los enlaces proporcionados.
-- La confirmación abre WhatsApp al número indicado.
-- La página está diseñada para adaptarse a móviles y escritorio.
-- La fotografía está enmarcada dentro de la sección de presentación, entre la portada y el mensaje.
+PENDIENTE DE PERSONALIZAR:
+- Cambiar el enlace de la recepción por la ubicación exacta del salón.
+- Verificar el enlace de Google Maps de la parroquia para la ciudad correcta.
+- Revisar la fecha y los detalles antes de compartir públicamente.

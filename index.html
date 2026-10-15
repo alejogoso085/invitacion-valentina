@@ -1,320 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#7b1725">
-  <title>Mis 15 años · Valentina López Giraldo</title>
+  <meta name="theme-color" content="#7d1724">
+  <meta name="description" content="Invitación a los quince años de Valentina López Giraldo.">
+  <title>Mis 15 años | Valentina López Giraldo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --wine: #861b2b;
-      --wine-dark: #641320;
-      --gold: #b58b45;
-      --gold-light: #d9bd7c;
-      --blush: #f7e7e1;
-      --cream: #fffaf2;
-      --green: #405b43;
-      --ink: #49352f;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: #e9d2c9;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-    .page {
-      position: relative;
-      width: min(100%, 720px);
-      margin: 0 auto;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 10% 12%, rgba(189, 45, 62, .08), transparent 25%),
-        radial-gradient(ellipse at 90% 45%, rgba(181, 139, 69, .10), transparent 24%),
-        linear-gradient(180deg, #fff9f1 0%, #fffaf4 45%, #fdf0e9 100%);
-      box-shadow: 0 0 38px rgba(75, 36, 28, .14);
-    }
-    .section {
-      position: relative;
-      padding: clamp(34px, 7vw, 58px) clamp(24px, 7vw, 58px);
-      text-align: center;
-      isolation: isolate;
-    }
-    .section::before {
-      content: "";
-      position: absolute;
-      inset: 13px;
-      border: 1px solid rgba(181, 139, 69, .54);
-      pointer-events: none;
-      z-index: -1;
-    }
-    .section::after {
-      content: "✦";
-      position: absolute;
-      left: 50%;
-      bottom: -11px;
-      transform: translateX(-50%);
-      color: var(--gold);
-      background: var(--cream);
-      padding: 0 12px;
-      font-size: 18px;
-      z-index: 2;
-    }
-    .eyebrow {
-      color: var(--wine);
-      font-size: .8rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-    }
-    .script {
-      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-      font-style: italic;
-      font-weight: normal;
-    }
-    .cover {
-      min-height: 610px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 76px;
-      padding-bottom: 72px;
-      background:
-        radial-gradient(ellipse at top left, rgba(128, 24, 38, .14), transparent 34%),
-        radial-gradient(ellipse at top right, rgba(128, 24, 38, .12), transparent 32%),
-        linear-gradient(180deg, #f9e7df, #fffaf2 58%, #f9e7df);
-    }
-    .cover::before {
-      inset: 18px;
-      border: 1px solid var(--gold);
-      outline: 1px solid rgba(181,139,69,.25);
-      outline-offset: 5px;
-    }
-    .floral-corner {
-      position: absolute;
-      color: var(--wine);
-      font-size: clamp(28px, 7vw, 48px);
-      opacity: .78;
-      line-height: 1;
-      pointer-events: none;
-    }
-    .floral-corner.tl { top: 28px; left: 28px; transform: rotate(-25deg); }
-    .floral-corner.tr { top: 32px; right: 27px; transform: rotate(24deg); }
-    .floral-corner.bl { bottom: 28px; left: 28px; transform: rotate(20deg); }
-    .floral-corner.br { bottom: 28px; right: 28px; transform: rotate(-20deg); }
-    .butterfly {
-      position: absolute;
-      color: var(--wine);
-      opacity: .8;
-      font-size: 24px;
-      animation: flutter 5.5s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .b1 { top: 21%; left: 14%; animation-delay: -.7s; }
-    .b2 { top: 31%; right: 13%; font-size: 20px; animation-delay: -2s; }
-    .b3 { bottom: 19%; right: 18%; font-size: 22px; animation-delay: -3.2s; }
-    @keyframes flutter {
-      0%, 100% { transform: translate(0,0) rotate(-9deg); }
-      50% { transform: translate(7px,-12px) rotate(9deg); }
-    }
-    .cover .mis { margin: 0 0 3px; letter-spacing: .35em; color: var(--wine); font-size: 1rem; }
-    .cover .number {
-      margin: 0;
-      color: var(--gold);
-      font-size: clamp(108px, 30vw, 190px);
-      line-height: .84;
-      font-weight: normal;
-      text-shadow: 0 1px 0 #fff3d4;
-    }
-    .cover .anos { margin: 14px 0 24px; color: var(--wine); letter-spacing: .22em; font-size: 1.4rem; }
-    .cover .name {
-      color: var(--wine);
-      font-size: clamp(44px, 12vw, 76px);
-      line-height: 1.02;
-      margin: 8px 0 4px;
-    }
-    .cover .surname { letter-spacing: .25em; font-size: .8rem; color: var(--gold); }
-    .ornament { color: var(--gold); letter-spacing: .25em; margin: 18px 0; }
-    .intro { padding-top: 42px; }
-    .intro h2, .date-section h2, .locations h2, .dress h2, .rsvp h2 {
-      color: var(--wine);
-      font-size: 1rem;
-      letter-spacing: .2em;
-      font-weight: normal;
-      text-transform: uppercase;
-      margin: 0 0 16px;
-    }
-    .intro .message {
-      max-width: 490px;
-      margin: 0 auto;
-      font-size: clamp(15px, 3.8vw, 18px);
-      line-height: 1.65;
-    }
-    .portrait-frame {
-      width: min(68%, 330px);
-      margin: 28px auto 30px;
-      padding: 7px;
-      background: linear-gradient(135deg, var(--gold), #f1dca9, var(--gold));
-      box-shadow: 0 12px 28px rgba(91, 43, 34, .17);
-      position: relative;
-    }
-    .portrait-frame img {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 2 / 3;
-      object-fit: cover;
-      object-position: center 35%;
-      border: 2px solid rgba(255,250,242,.9);
-    }
-    .caption {
-      color: var(--wine);
-      font-size: 1.45rem;
-      margin: 0;
-    }
-    .date-section { padding-top: 48px; padding-bottom: 50px; }
-    .date-card {
-      margin: 22px auto;
-      max-width: 430px;
-      padding: 20px 12px;
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-    }
-    .date-card .day { color: var(--wine); font-size: 4.4rem; line-height: .95; margin: 7px 0; }
-    .date-card .month { letter-spacing: .13em; font-size: .9rem; }
-    .date-card .time { margin-top: 12px; font-size: 1.05rem; }
-    .locations { padding-top: 44px; }
-    .location-card {
-      margin: 18px auto;
-      max-width: 460px;
-      padding: 18px 15px 22px;
-      border: 1px solid rgba(181,139,69,.65);
-      background: rgba(255,255,255,.42);
-    }
-    .location-card .symbol { color: var(--green); font-size: 30px; margin-bottom: 8px; }
-    .location-card h3 { margin: 0 0 8px; color: var(--wine); font-size: .9rem; letter-spacing: .14em; font-weight: normal; }
-    .location-card p { margin: 0 auto 15px; line-height: 1.45; font-size: .98rem; max-width: 320px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 20px;
-      border-radius: 999px;
-      border: 1px solid var(--gold-light);
-      background: var(--wine);
-      color: #fff9ed;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: .75rem;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-      box-shadow: 0 4px 10px rgba(100,19,32,.15);
-    }
-    .button:hover, .button:focus-visible { background: var(--wine-dark); transform: translateY(-2px); }
-    .dress { padding-top: 42px; padding-bottom: 42px; }
-    .dress-box {
-      max-width: 430px;
-      margin: 0 auto;
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-      padding: 23px 10px;
-    }
-    .dress .dress-name { color: var(--green); font-size: 1.15rem; letter-spacing: .16em; }
-    .rsvp { padding-top: 42px; padding-bottom: 60px; }
-    .rsvp .button { min-height: 54px; padding-inline: 28px; font-size: .8rem; }
-    .rsvp .small { max-width: 360px; margin: 16px auto; font-size: .85rem; line-height: 1.5; }
-    .farewell { color: var(--wine); font-size: clamp(35px, 9vw, 54px); margin: 28px 0 12px; }
-    .footer { font-size: .78rem; line-height: 1.5; letter-spacing: .04em; }
-    .last-butterfly { font-size: 28px; color: var(--wine); margin-top: 22px; }
-    @media (min-width: 760px) {
-      .page { margin: 28px auto; }
-      .cover { min-height: 700px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .butterfly { animation: none; }
-      .button { transition: none; }
-    }
+    :root{--wine:#821b2a;--gold:#b58b43;--blush:#f8e9e3;--cream:#fffaf3;--green:#425b43;--ink:#493832}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--blush);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif}
+    .page{width:min(100%,760px);margin:0 auto;background:var(--cream);box-shadow:0 0 40px #54221b18;overflow:hidden}
+    .cover{display:block;width:100%;height:auto}
+    section{position:relative;padding:64px 24px;text-align:center;overflow:hidden}
+    section:before{content:'✧';position:absolute;top:18px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:24px}
+    .eyebrow{margin:0 0 10px;text-transform:uppercase;letter-spacing:.2em;font-size:14px;color:var(--green)}
+    h1,h2,p{position:relative;z-index:1}
+    h2{font-size:clamp(32px,7vw,46px);font-weight:500;color:var(--wine);margin:0 0 18px}
+    .script{font-family:'Great Vibes',cursive;color:var(--gold);font-size:clamp(32px,7vw,48px);margin:0 0 18px}
+    .message{max-width:540px;margin:0 auto;font-size:21px;line-height:1.55}
+    .divider{height:1px;width:90px;background:var(--gold);margin:24px auto}
+    .event{margin:28px auto 0;max-width:520px;padding:24px 18px;border:1px solid #b58b4366;background:#fffdf9}
+    .event h3{font-size:24px;font-weight:500;color:var(--green);margin:0 0 10px}
+    .date{font-size:25px;color:var(--wine);margin:8px 0}
+    .time{font-size:20px;letter-spacing:.06em;margin:6px 0}
+    .button{display:inline-block;margin-top:14px;padding:13px 23px;border-radius:3px;background:var(--wine);border:1px solid var(--wine);color:#fff8ed;text-decoration:none;font-family:Georgia,serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s,background .2s}
+    .button:hover{transform:translateY(-2px);background:#65111e}
+    .button.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+    .dress{font-size:24px;color:var(--green);margin:8px 0}
+    .closing{background:linear-gradient(180deg,#fffaf3,#f5e2dc)}
+    .small-note{font-size:16px;letter-spacing:.04em}
+    footer{padding:20px;text-align:center;background:var(--wine);color:#fff5e9;font-size:16px}
+    .butterfly{position:absolute;color:#b83d48;opacity:.55;font-size:23px;animation:float 5s ease-in-out infinite}
+    .b1{top:28px;left:9%}.b2{top:70px;right:10%;animation-delay:1.5s}.b3{bottom:30px;right:14%;animation-delay:2.5s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-12px) rotate(8deg)}}
+    @media(min-width:650px){section{padding:76px 56px}.event{padding:30px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.butterfly{animation:none}.button{transition:none}}
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="section cover" aria-label="Portada de la invitación">
-      <span class="floral-corner tl" aria-hidden="true">❀</span>
-      <span class="floral-corner tr" aria-hidden="true">✿</span>
-      <span class="floral-corner bl" aria-hidden="true">✿</span>
-      <span class="floral-corner br" aria-hidden="true">❀</span>
-      <span class="butterfly b1" aria-hidden="true">🦋</span>
-      <span class="butterfly b2" aria-hidden="true">🦋</span>
-      <span class="butterfly b3" aria-hidden="true">🦋</span>
-      <p class="mis">MIS</p>
-      <h1 class="number">15</h1>
-      <p class="anos">AÑOS</p>
-      <div class="ornament">✦ ───── ✦</div>
-      <p class="name script">Valentina</p>
-      <p class="surname">LÓPEZ GIRALDO</p>
-    </section>
+    <!-- PORTADA: reemplaza portada.png por la imagen definitiva si luego la ajustamos -->
+    <img class="cover" src="portada.png" alt="Mis 15 años, Valentina López Giraldo">
 
-    <section class="section intro" aria-label="Presentación">
-      <div class="ornament">── ✦ ──</div>
-      <div class="portrait-frame">
-        <img src="valentina.png" alt="Retrato de Valentina" loading="eager">
-      </div>
-      <p class="caption script">Con cariño, Valentina</p>
-      <div class="ornament">── 🦋 ──</div>
+    <section aria-labelledby="bienvenida">
+      <span class="butterfly b1" aria-hidden="true">❧</span><span class="butterfly b2" aria-hidden="true">🦋</span>
+      <p class="eyebrow">Con el corazón lleno de gratitud</p>
+      <h2 id="bienvenida">Una fecha para recordar</h2>
       <p class="message">Le doy gracias a Dios por regalarme la vida, por guiar mis pasos y por permitirme llegar a este momento tan maravilloso. Hoy celebro mis quince años con el corazón lleno de gratitud, ilusión y amor. Deseo compartir esta bendición contigo y guardar juntos un recuerdo que vivirá siempre en mi corazón.</p>
+      <div class="divider"></div><p class="script">Con cariño, Valentina</p>
     </section>
 
-    <section class="section date-section" aria-label="Fechas de la celebración">
-      <h2>Celebración</h2>
-      <div class="date-card">
-        <p>Sábado</p>
-        <p class="day">14</p>
-        <p class="month">DE NOVIEMBRE DE 2026</p>
-        <p class="time">6:30 p. m.</p>
-      </div>
-      <h2>Ceremonia religiosa</h2>
-      <div class="date-card">
-        <p>Miércoles</p>
-        <p class="day">4</p>
-        <p class="month">DE NOVIEMBRE DE 2026</p>
-        <p class="time">6:30 p. m.</p>
-      </div>
+    <section aria-labelledby="fechas">
+      <span class="butterfly b1" aria-hidden="true">🦋</span>
+      <p class="eyebrow">Acompáñame a celebrar</p><h2 id="fechas">Mis quince años</h2>
+      <div class="event"><h3>Celebración</h3><p class="date">Sábado, 14 de noviembre de 2026</p><p class="time">6:30 p. m.</p></div>
+      <div class="event"><h3>Ceremonia religiosa</h3><p class="date">Miércoles, 4 de noviembre de 2026</p><p class="time">6:30 p. m.</p><p>Parroquia de Nuestra Señora de Chiquinquirá</p><a class="button gold" href="https://www.google.com/maps/search/?api=1&query=Parroquia+de+Nuestra+Se%C3%B1ora+de+Chiquinquir%C3%A1" target="_blank" rel="noopener">Ver ubicación de la iglesia</a></div>
+      <div class="event"><h3>Recepción</h3><p>¡Continuemos celebrando juntos!</p><p class="small-note">La ubicación se actualizará cuando esté confirmada.</p><a class="button gold" href="https://www.google.com/maps" target="_blank" rel="noopener">Ver ubicación de la recepción</a></div>
     </section>
 
-    <section class="section locations" aria-label="Ubicaciones">
-      <h2>Ubicaciones</h2>
-      <div class="location-card">
-        <div class="symbol" aria-hidden="true">♧</div>
-        <h3>Ceremonia religiosa</h3>
-        <p>Parroquia de Nuestra Señora de Chiquinquirá</p>
-        <a class="button" href="https://maps.app.goo.gl/EmmYsWPoji5TxUiX8" target="_blank" rel="noopener noreferrer">Ver ubicación de la iglesia</a>
-      </div>
-      <div class="location-card">
-        <div class="symbol" aria-hidden="true">✧</div>
-        <h3>Recepción</h3>
-        <p>Celebración de los quince años</p>
-        <a class="button" href="https://maps.app.goo.gl/v3odPMMtQX25KVJ86" target="_blank" rel="noopener noreferrer">Ver ubicación de la recepción</a>
-      </div>
+    <section aria-labelledby="vestuario">
+      <span class="butterfly b2" aria-hidden="true">🦋</span><p class="eyebrow">Un detalle para la ocasión</p><h2 id="vestuario">Código de vestimenta</h2><p class="dress">Formal</p><p class="small-note">Celebremos esta noche tan especial con elegancia y alegría.</p>
     </section>
 
-    <section class="section dress" aria-label="Código de vestimenta">
-      <div class="dress-box">
-        <h2>Vestuario</h2>
-        <p class="dress-name">FORMAL</p>
-      </div>
+    <section class="closing" aria-labelledby="confirmar">
+      <span class="butterfly b1" aria-hidden="true">🦋</span><span class="butterfly b3" aria-hidden="true">✧</span>
+      <p class="eyebrow">Tu presencia es importante para mí</p><h2 id="confirmar">¿Me acompañas?</h2>
+      <p class="message">Por favor, confirma tu asistencia. Será una alegría compartir este momento tan especial contigo.</p>
+      <a class="button" href="https://wa.me/573013985987?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20quince%20a%C3%B1os%20de%20Valentina%20L%C3%B3pez%20Giraldo." target="_blank" rel="noopener">Confirmar asistencia por WhatsApp</a>
+      <div class="divider"></div><p class="script">¡Te espero!</p><p class="small-note">Con cariño, Valentina López Giraldo</p>
     </section>
-
-    <section class="section rsvp" aria-label="Confirmación de asistencia">
-      <h2>Confirmar asistencia</h2>
-      <a class="button" href="https://wa.me/573013985987?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20quince%20a%C3%B1os%20de%20Valentina%20L%C3%B3pez%20Giraldo." target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
-      <p class="small">Por favor, confirma tu asistencia al número indicado.</p>
-      <div class="ornament">── ✦ ──</div>
-      <p class="farewell script">¡Te esperamos!</p>
-      <p class="footer">Tu presencia y alegría harán que esta noche sea inolvidable.</p>
-      <div class="last-butterfly" aria-hidden="true">🦋</div>
-    </section>
+    <footer>Mis XV años · Valentina López Giraldo · 2026</footer>
   </main>
 </body>
 </html>
