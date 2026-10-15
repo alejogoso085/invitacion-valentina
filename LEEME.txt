@@ -1,0 +1,20 @@
+INVITACIÓN WEB DE VALENTINA — ARCHIVOS INICIALES
+
+Archivos:
+- index.html: página web inicial con portada, mensaje, fechas, ubicaciones, vestuario y confirmación por WhatsApp.
+- portada.png: imagen de portada.
+
+PARA SUBIRLO A GITHUB:
+1. Abre el repositorio invitacion-valentina.
+2. Pulsa Add file > Upload files.
+3. Arrastra index.html y portada.png (no hace falta subir el ZIP).
+4. Pulsa Commit changes.
+5. Ve a Settings > Pages.
+6. En Build and deployment, elige Deploy from a branch.
+7. Selecciona la rama main y la carpeta /(root), y pulsa Save.
+8. Espera unos minutos y abre la dirección que GitHub Pages muestre.
+
+PENDIENTE DE PERSONALIZAR:
+- Cambiar el enlace de la recepción por la ubicación exacta del salón.
+- Verificar el enlace de Google Maps de la parroquia para la ciudad correcta.
+- Revisar la fecha y los detalles antes de compartir públicamente.
